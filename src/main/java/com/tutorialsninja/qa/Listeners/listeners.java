@@ -20,12 +20,10 @@ import com.tutorialsninja.qa.Utilities.Extent_Reporter;
 public class listeners implements ITestListener {
 	ExtentReports extentReport;
 	ExtentTest eTest;
-	//Just adding comment to verify in Github
 	@Override
 	public void onStart(ITestContext context) {
 		 extentReport = Extent_Reporter.generate_ExtentReport();
 	}
-	
 	
 	@Override
 	public void onTestStart(ITestResult result) {
