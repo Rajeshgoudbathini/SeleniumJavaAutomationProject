@@ -9,7 +9,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.tutorialsninja.qa.pages.MainHeaders;
+import com.tutorialsninja.qa.pages.RegisterPage;
 
 public class Utilities {
 
@@ -82,5 +86,16 @@ public class Utilities {
              String script = "return window.getComputedStyle(arguments[0], '::before').getPropertyValue('content');";
          	 String beforeContent = (String) js.executeScript(script, element);
          	 return beforeContent;
+    }
+    
+    public static void interactWithColumnRightItems(MainHeaders mainHeaders,RegisterPage registerPage,String[] items) {
+        for (String item : items) {
+            // Get the element with the specified text and select it
+            registerPage.columnRight().getElement(item).select();   
+        	// Navigate to the "My Account" section from the main headers Dropdown menu
+    		mainHeaders
+    		    .ClickMyAccount()
+    		    .SelectOptionFromDropdown("Register");  	
+        }
     }
 }

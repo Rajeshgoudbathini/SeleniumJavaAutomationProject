@@ -1,5 +1,8 @@
 package com.tutorialsninja.qa.pages;
 
+import java.util.NoSuchElementException;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 public class RegisterPage {
 
 	WebDriver driver;
-	
+	String str="";
 	//Elements
 		@FindBy(id="input-firstname")
 		private WebElement firstName;
@@ -40,6 +43,9 @@ public class RegisterPage {
 		@FindBy(xpath="//input[@type='submit']")
 		private WebElement Continue;
 		
+		
+		
+		//WarningMessages
 		@FindBy(xpath="//input[@name='firstname']/following-sibling::div")
 		private WebElement WaraningMessageFirstname;
 		
@@ -63,6 +69,13 @@ public class RegisterPage {
 		
 		@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']")
 		private WebElement WaraningMessageEmailAlreadyRegistered;
+		
+		
+		//URL
+		
+		@FindBy(xpath="//div[@id='logo']/h1/a")
+		private WebElement registerPageHeading;
+		
 		
 		//Getters and Setters
 		
@@ -234,6 +247,17 @@ public class RegisterPage {
 		public void setWaraningMessagePrivacyPolicy(WebElement waraningMessagePrivacyPolicy) {
 			WaraningMessagePrivacyPolicy = waraningMessagePrivacyPolicy;
 		}
+		
+		//--------------------------
+		
+		public WebElement getRegisterPageHeading() {
+			return registerPageHeading;
+		}
+
+
+		public void setRegisterPageHeading(WebElement registerPageHeading) {
+			this.registerPageHeading = registerPageHeading;
+		}
 
 
 		//Constructor
@@ -322,5 +346,53 @@ public class RegisterPage {
 		public String EmailAlreadyRegisteredWaraningMessage() {  
 			return	WaraningMessageEmailAlreadyRegistered.getText();
 			}
+		
+		   public WebElement ColumnRight(String str) {
+	            WebElement element = driver.findElement(By.xpath("//div[@class='list-group']/a[text()='" + str + "']"));
+	       return element;
+		   }
+		   
+//		   public Object select(WebElement element) { 
+//			String  str= element.getText().toLowerCase();
+//			   switch(str) { 		   
+//			   case "login":
+//				   element.click();
+//				 return new LoginPage(driver);
+//			   case "register":
+//				   element.click();
+//					 return new RegisterAccountPage(driver);
+////			   case "forgotten password":
+////				   element.click();
+////					 return;
+////			   case "my account":
+////				   return;
+////			   case "address book":
+//			default :
+//			    throw new NoSuchElementException("Element with name : " + str+" is not found.");
+//
+//			   }
+//			   
+//		   }
+		//-------------------------------------------------------------------------------------------
+		   // Inner class for handling column right elements
+		    public class ColumnRight {
+		        private String str;
+
+		        public ColumnRight getElement(String str) {
+		            this.str = str;
+		            return this;
+		        }
+
+		        public void select() {
+		            WebElement element = driver.findElement(By.xpath("//div[@class='list-group']/a[text()='" + str + "']"));
+		            element.click();  // or any other action you want to perform
+		        }
+		    }
+
+		    // Method to get the ColumnRight handler
+		    public ColumnRight columnRight() {
+		        return new ColumnRight();
+		    }
+	 
 	}
 

@@ -5,9 +5,31 @@
     <classes>
       <class name="com.tutorialsninja.qa.Test.Register">
         <methods>
-          <include name="VerifyTheMandatoryfieldsAreAcceptingOnlySpaces"/>
-          <include name="teardown"/>
+          <include name="TC_RF_002VerifyMessageSentToRegisteredEmail"/>
+          <include name="TC_RF_009VerifyRegisteringAnAccountByProvidingTheExistingAccountDetails_EXAMPLE_ExistingEmailAddress"/>
+          <include name="TC_RF_010VerifyRegisteringAnAccountWithInvalidEmailAddress"/>
+          <include name="TC_RF_019VerifyLeadingAndTrailingSpacesEnteredAreTrimmed"/>
+          <include name="TC_RF_008VerifyRegisteringAnAccountWithDifferentPasswordsInto_Password_And_PasswordConfirm_Fields"/>
+          <include name="TC_RF_012VerifyRegisteringAnAccountuUsingTheKeyboardkeys"/>
+          <include name="TC_RF_014VerifymandatoryFieldsMarkedWithredcolorStarSymbol"/>
+          <include name="TC_RF_006VerifyRegisteringAnAccountWhenNoOptionisSelectedforNewsletterField"/>
+          <include name="TC_RF_022verifyPasswordFieldVisibilityToggle"/>
+          <include name="TC_RF_023VerifyNavigateToAllLinksInRegisterPage"/>
+          <include name="TC_RF_017VerifyPasswordfieldsInRegisterAccountPagefollowingPasswordComplexityStandards"/>
           <include name="setup"/>
+          <include name="TC_RF_003VerifyRegisteringAccountbyAllfields"/>
+          <include name="TC_RF_011VerifyRegisteringAnAccountWithInvalidPhoneNumber"/>
+          <include name="TC_RF_004VerifyNotificationMessagesForMandatoryFieldsWhenSubmitIsClickedWithEmptyForm"/>
+          <include name="TC_RF_024verifyPasswordFieldRequiredWithoutPasswordConfirm"/>
+          <include name="teardown"/>
+          <include name="TC_RF_021verifyRegisteringTheAccountWithoutSelectingThePrivacyPolicyCheckbox"/>
+          <include name="TC_RF_007VerifyDifferentWaysOfNavigatingToRegisterAccountPage"/>
+          <include name="TC_RF_013VerifyAllFieldHaveingtTheProperPlaceholders"/>
+          <include name="TC_RF_020VerifyPrivacyPolicyIsNotSelectedByDefaault"/>
+          <include name="TC_RF_025VerifyTheBreadcrumbPageHeadingPageURLPageTitleOfRegisterAccountPage"/>
+          <include name="TC_RF_005VerifyRegisteringAnAccountWhenYesOptionisSelectedforNewsletterField"/>
+          <include name="TC_RF_016VerifyTheMandatoryfieldsAreAcceptingOnlySpaces"/>
+          <include name="TC_RF_018verifyFieldRequirementsAccordingToTheClient"/>
         </methods>
       </class> <!-- com.tutorialsninja.qa.Test.Register -->
     </classes>

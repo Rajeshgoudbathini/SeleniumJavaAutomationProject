@@ -168,7 +168,7 @@ softAssert.assertAll();
     	homepage.ClickonMyAccount().ClickonLogin();
     	loginPage.fillLoginCredentials(base.fixprop.getProperty("emailID"), base.fixprop.getProperty("password")).ClickLoginButton();
     System.out.println("check the below line");
-    	header.LogoutFromAccountDropdown();	
+    	header.logoutFromAccountDropdown();	
     	driver.navigate().back();
     	WebElement ele = loginPage.getLoginButton();
     	WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -254,7 +254,7 @@ softAssert.assertAll();
     	 //Validating with Actual with Expected
     	 Assert.assertEquals(actualMessage, expectedMessage,"Actualmessage "+actualMessage+ " : Expected Meassge"+expectedMessage+" -  are different");
      	//Clicks on MyAccount>Login from header and navigate to LoginPage
-        header.ClickMyAccount().ClickLogout();
+        header.ClickMyAccount().clickLogout();
       //Page display's user has LogedOut and navigates back to HomePage  Note:Implemented method in ChangePasswordPage
    	 changePasswordPage.ClickContinueAfterAccountLogout();
      	//Fills the login Credentials with new Updated password and navigates to LoginSuccessPage
@@ -291,7 +291,7 @@ softAssert.assertAll();
                     loginPage.fillLoginCredentials(email, password).
                     ClickLoginButton();
                     header.ClickMyAccount().
-                    ClickLogout();
+                    clickLogout();
                      logoutSuccessPage.ClickContinueAfterAccountLogout();
                     break; // Prevent fall-through to the next case
 
@@ -301,7 +301,7 @@ softAssert.assertAll();
                    loginPage.NewCustomerLogin().ClickOnLogin().fillLoginCredentials(email, password).
                    ClickLoginButton();
                    header.ClickMyAccount().
-                   ClickLogout();
+                   clickLogout();
                    logoutSuccessPage.ClickContinueAfterAccountLogout();
                     break; // Prevent fall-through to the next case
 
@@ -310,7 +310,7 @@ softAssert.assertAll();
                     homepage.ClickOnMyaccountInFooter().fillLoginCredentials(email, password).
                     ClickLoginButton();
                     header.ClickMyAccount().
-                    ClickLogout(); // Log out if needed
+                    clickLogout(); // Log out if needed
                     changePasswordPage.ClickContinueAfterAccountLogout();
                     break; // Prevent fall-through to the next case
 
@@ -319,7 +319,7 @@ softAssert.assertAll();
                     homepage.ClickOnMyaccountInFooter().NewCustomerLogin().ClickOnLogin().fillLoginCredentials(email, password).
                     ClickLoginButton();
                     header.ClickMyAccount().
-                    ClickLogout(); // Log out if needed
+                    clickLogout(); // Log out if needed
                     changePasswordPage.ClickContinueAfterAccountLogout();
                     break; // Prevent fall-through to the next case
 
